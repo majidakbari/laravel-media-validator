@@ -1,6 +1,6 @@
 <?php
 
-namespace makbari\rules\validator;
+namespace makbari\validator\rules;
 
 use Illuminate\Contracts\Validation\Rule;
 use Illuminate\Http\UploadedFile;
