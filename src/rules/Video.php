@@ -7,7 +7,7 @@ use Illuminate\Http\UploadedFile;
 
 /**
  * Class Video
- * @package makbari\rules\validator
+ * @package makbari\validator\rules
  */
 class Video implements Rule
 {
@@ -44,12 +44,22 @@ class Video implements Rule
                         '/application\/octet-stream/',
                         '/video\/x-flv/',
                         '/video\/x-matroska/',
+                        '/video\/x-msvideo/',
+                        '/video\/x-ms-asf/',
+                        '/video\/x-ms-asf/',
+                        '/video\/x-ms-wmv/',
+                        '/video\/mpeg/'
                     ],
                     [
                         'mp4',
                         '3gp',
                         'flv',
-                        'mkv'
+                        'mkv',
+                        'avi',
+                        'asf',
+                        'asx',
+                        'wmv',
+                        'mpeg'
                     ],
                     $value->getMimeType()
                 ),
@@ -76,7 +86,15 @@ class Video implements Rule
     private function getValidTypes()
     {
         return [
-            'mp4', '3gp', 'flv', 'mkv'
+            'mp4',
+            '3gp',
+            'flv',
+            'mkv',
+            'avi',
+            'asf',
+            'asx',
+            'wmv',
+            'mpeg'
         ];
     }
 

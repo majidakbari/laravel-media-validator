@@ -19,6 +19,8 @@ public function rules()
     return [
         'video_input' => new \makbari\rules\validator\Video(),
         'audio_file' => new \makbari\rules\validator\Audio(),
+        'image_file' => new \makbari\rules\validator\Image(),
+        'document_file' => new \makbari\rules\validator\Document(),
     ];
 }
 ```
@@ -38,5 +40,7 @@ public function rules()
 ```
 ### Available formats
 
-`video` -  mp4, 3gp, flv, mkv  
-`audio` -  mp3, wav, ogg, amr, wma
+`video`    -  mp4, 3gp, flv, mkv, avi, asf, asx, wmv, mpeg  
+`audio`    -  mp3, wav, ogg, amr, wma, oga, m4a, m4b, ra, ram, mid, midi, aac  
+`document` -  csv, doc, docx, pdf, ppt, xls, xlsx, txt, css, html, htm  
+`image`    -  jpg, jpeg, gif, png, bmp, tif, tiff, ico  

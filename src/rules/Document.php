@@ -6,10 +6,10 @@ use Illuminate\Contracts\Validation\Rule;
 use Illuminate\Http\UploadedFile;
 
 /**
- * Class Audio
+ * Class Document
  * @package makbari\validator\rules
  */
-class Audio implements Rule
+class Document implements Rule
 {
 
     /**
@@ -40,34 +40,31 @@ class Audio implements Rule
             return in_array(
                 preg_replace(
                     [
-                        '/audio\/mpeg/',
-                        '/audio\/mpeg/',
-                        '/audio\/mpeg/',
-                        '/audio\/x-realaudio/',
-                        '/audio\/x-realaudio/',
-                        '/audio\/x-wav/',
-                        '/application\/ogg/',
-                        '/application\/ogg/',
-                        '/audio\/midi/',
-                        '/audio\/midi/',
-                        '/audio\/x-ms-wma/',
-                        '/application\/octet-stream/',
-                        '/audio\/aac/'
+                        '/text\/csv/',
+                        '/application\/msword/',
+                        '/application\/vnd.openxmlformats-officedocument.wordprocessingml.document/',
+                        '/application\/pdf/',
+                        '/application\/vnd.ms-powerpoint/',
+                        '/application\/vnd.ms-excel/',
+                        '/application\/vnd.openxmlformats-officedocument.spreadsheetml.sheet/',
+                        '/text\/plain/',
+                        '/text\/css/',
+                        '/text\/html/',
+                        '/text\/html/'
                     ],
                     [
-                        'mp3',
-                        'm4a',
-                        'm4b',
-                        'ra',
-                        'ram',
-                        'wav',
-                        'ogg',
-                        'oga',
-                        'mid',
-                        'midi',
-                        'wma',
-                        'amr',
-                        'aac'
+                        'csv',
+                        'doc',
+                        'docx',
+                        'pdf',
+                        'ppt',
+                        'xls',
+                        'xlsx',
+                        'txt',
+                        'css',
+                        'html',
+                        'htm',
+
                     ],
                     $value->getMimeType()
                 ),
@@ -85,7 +82,7 @@ class Audio implements Rule
      */
     public function message()
     {
-        return 'The attribute must be an audio file by these formats : ' . implode(', ', $this->getTypes());
+        return 'The attribute must be a document file by these formats : ' . implode(', ', $this->getTypes());
 
     }
 
@@ -95,19 +92,17 @@ class Audio implements Rule
     private function getValidTypes()
     {
         return [
-            'mp3',
-            'm4a',
-            'm4b',
-            'ra',
-            'ram',
-            'wav',
-            'ogg',
-            'oga',
-            'mid',
-            'midi',
-            'wma',
-            'amr',
-            'aac'
+            'csv',
+            'doc',
+            'docx',
+            'pdf',
+            'ppt',
+            'xls',
+            'xlsx',
+            'txt',
+            'css',
+            'html',
+            'htm',
         ];
     }
 

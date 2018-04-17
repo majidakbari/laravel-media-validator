@@ -6,10 +6,10 @@ use Illuminate\Contracts\Validation\Rule;
 use Illuminate\Http\UploadedFile;
 
 /**
- * Class Audio
+ * Class Image
  * @package makbari\validator\rules
  */
-class Audio implements Rule
+class Image implements Rule
 {
 
     /**
@@ -40,34 +40,26 @@ class Audio implements Rule
             return in_array(
                 preg_replace(
                     [
-                        '/audio\/mpeg/',
-                        '/audio\/mpeg/',
-                        '/audio\/mpeg/',
-                        '/audio\/x-realaudio/',
-                        '/audio\/x-realaudio/',
-                        '/audio\/x-wav/',
-                        '/application\/ogg/',
-                        '/application\/ogg/',
-                        '/audio\/midi/',
-                        '/audio\/midi/',
-                        '/audio\/x-ms-wma/',
-                        '/application\/octet-stream/',
-                        '/audio\/aac/'
+                        '/image\/jpeg/',
+                        '/image\/jpeg/',
+                        '/image\/jpeg/',
+                        '/image\/gif/',
+                        '/image\/png/',
+                        '/image\/bmp/',
+                        '/image\/tiff/',
+                        '/image\/tiff/',
+                        '/image\/x-icon/'
                     ],
                     [
-                        'mp3',
-                        'm4a',
-                        'm4b',
-                        'ra',
-                        'ram',
-                        'wav',
-                        'ogg',
-                        'oga',
-                        'mid',
-                        'midi',
-                        'wma',
-                        'amr',
-                        'aac'
+                        'jpg',
+                        'jpeg',
+                        'jpe',
+                        'gif',
+                        'png',
+                        'bmp',
+                        'tif',
+                        'tiff',
+                        'ico'
                     ],
                     $value->getMimeType()
                 ),
@@ -85,7 +77,7 @@ class Audio implements Rule
      */
     public function message()
     {
-        return 'The attribute must be an audio file by these formats : ' . implode(', ', $this->getTypes());
+        return 'The attribute must be an image file by these formats : ' . implode(', ', $this->getTypes());
 
     }
 
@@ -95,19 +87,15 @@ class Audio implements Rule
     private function getValidTypes()
     {
         return [
-            'mp3',
-            'm4a',
-            'm4b',
-            'ra',
-            'ram',
-            'wav',
-            'ogg',
-            'oga',
-            'mid',
-            'midi',
-            'wma',
-            'amr',
-            'aac'
+            'jpg',
+            'jpeg',
+            'jpe',
+            'gif',
+            'png',
+            'bmp',
+            'tif',
+            'tiff',
+            'ico'
         ];
     }
 

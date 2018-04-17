@@ -12,9 +12,9 @@
   "minimum-stability": "dev",
   "require": {
     "php": ">=7.0",
-    "illuminate/contracts": "5.*",
-    "illuminate/http" : "5.*",
-    "symfony/http-foundation" : "3.*"
+    "illuminate/contracts": "*",
+    "illuminate/http" : "*",
+    "symfony/http-foundation" : "*"
   },
   "autoload" : {
     "psr-4": {
