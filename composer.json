@@ -1,0 +1,23 @@
+{
+  "name": "makbari/media-validator",
+  "description": "Audio and Video validator",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Majid Akbari",
+      "email": "majidakbariiii@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "php": ">=7.0",
+    "illuminate/contracts": "~5.1",
+    "illuminate/http" : "~5.6"
+  },
+  "autoload" : {
+    "psr-4": {
+      "makbari\\validator\\": "src"
+    }
+  }
+}
