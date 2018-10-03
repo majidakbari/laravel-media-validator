@@ -48,7 +48,8 @@ class Video implements Rule
                         '/video\/x-ms-asf/',
                         '/video\/x-ms-asf/',
                         '/video\/x-ms-wmv/',
-                        '/video\/mpeg/'
+                        '/video\/mpeg/',
+                        '/video\/quicktime/'
                     ],
                     [
                         'mp4',
@@ -59,7 +60,8 @@ class Video implements Rule
                         'asf',
                         'asx',
                         'wmv',
-                        'mpeg'
+                        'mpeg',
+                        'mov'
                     ],
                     $value->getMimeType()
                 ),
@@ -94,7 +96,8 @@ class Video implements Rule
             'asf',
             'asx',
             'wmv',
-            'mpeg'
+            'mpeg',
+            'mov'
         ];
     }
 
